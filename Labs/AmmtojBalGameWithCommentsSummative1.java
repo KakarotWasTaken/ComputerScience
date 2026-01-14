@@ -138,6 +138,32 @@ public class AmmtojBalGameWithCommentsSummative1
         String answer = input.nextLine();
         String puzzle1Answer = answer; // Store the answer for future validation
         System.out.println("[Answer recorded]");
+
+        int validChoice = 0;
+        while (validChoice != 41)
+        {
+          System.out.println("\nWhat would you like to do next?");
+          System.out.println("1. Continue to the next puzzle");
+          System.out.println("2. Return to Main Menu");
+          System.out.print("Enter your choice (1 or 2): ");
+          String choice = input.nextLine().toLowerCase();
+
+          if (choice.equals("1") || choice.equals("one"))
+          {
+            System.out.println("\n--- Continuing to the next puzzle... ---");
+            System.out.println("ye");
+            validChoice = 41; // Exit the loop 
+          }
+          else if (choice.equals("2") || choice.equals("two"))
+          {
+            System.out.println("\n--- Returning to Main Menu... ---");
+            validChoice = 41; // Exit the loop (return to main menu)
+          }
+          else
+          {
+            System.out.println("Invalid choice. Please enter 1 or 2.");
+          }
+        }
     }
 
 }
