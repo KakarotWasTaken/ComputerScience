@@ -26,24 +26,11 @@ public class AmmtojBalGameWithCommentsSummative1
     System.out.println();
     System.out.println("This is a text-based escape room game. Use the menu below to proceed (Appears in 5 seconds).");
     System.out.println();
-    // Clear the introduction screen, using try, catch and thread, found online at https://www.geeksforgeeks.org/java/thread-sleep-method-in-java-with-examples/
-    try 
-    {
-      Thread.sleep(5000); // Wait for 5 seconds before clearing
-    } 
-    catch (InterruptedException e) 
-    {
-      e.printStackTrace(); // Handle the exception (in case the thread gets interrupted)
-    }
-    // Print 15 new lines to simulate clearing the screen
-    for (int i = 0; i < 15; i++) 
-    {
-      System.out.println();
-    }
+    clearScreen();
 
     // Main menu loop
-    boolean keepRunning = true;
-    while (keepRunning)
+    int keepRunning = 0;
+    while (keepRunning != 41)
     {
       System.out.println("--- Main Menu ---");
       System.out.println("1. Read the instructions on how to play");
@@ -64,18 +51,40 @@ public class AmmtojBalGameWithCommentsSummative1
       }
       else if (choice == 2)
       {
-        System.out.println("Game not implemented yet. Returning to menu.");
+        startGame(input);
       }
       else if (choice == 3)
       {
         System.out.println("--- Quit ---");
         System.out.println("Thank you for trying Escape Room Adventure. Goodbye!");
-        keepRunning = false;
+        keepRunning = 41; // Exit the loop to quit the game
       }
       System.out.println();
     }
     input.close();
   }
+
+
+  public void clearScreen()
+  {
+    // Clear the screen method, using try, catch and thread, found online at https://www.geeksforgeeks.org/java/thread-sleep-method-in-java-with-examples/
+    try 
+    {
+      Thread.sleep(5000); // Wait for 5 seconds before clearing
+    } 
+    catch (InterruptedException e) 
+    {
+      e.printStackTrace(); // Handle the exception (in case the thread gets interrupted)
+    }
+    // Print 15 new lines to simulate clearing the screen
+    for (int i = 0; i < 15; i++) 
+    {
+      System.out.println();
+    }
+  }
+
+
+
   // Reads integer choice from the user and returns value
   public int getMenuChoice(Scanner input)
   {
@@ -100,5 +109,39 @@ public class AmmtojBalGameWithCommentsSummative1
       }
     }
   }
+   public void startGame(Scanner input)
+    {
+        System.out.println("--- Welcome to the Game! ---");
+        System.out.println("Let's begin with Puzzle 1...");
+        clearScreen();
+        System.out.println("--- Puzzle 1 ---");
+        // Generate the three sets of numbers that sum to 67
+        // The number generation approach is adapted from GeeksforGeeks https://www.geeksforgeeks.org/dsa/random-list-of-m-non-negative-integers-whose-sum-is-n
+        int m = 3; // Three numbers per set
+        int n = 67; // Target sum per set
+        System.out.println("Three sets of numbers that each sum to 67:");
+
+        for (int set = 0; set < 3; set++)
+        {
+            int[] arr = new int[m];
+            for (int i = 0; i < n; i++)
+            {
+                int randomIndex = (int)(Math.random() * m); // Generate random index
+                arr[randomIndex]++; // Increment random index
+            }
+            for (int number : arr)
+            {
+                System.out.print(number + " ");
+            }
+            System.out.println(); // Move to the next line after printing a set
+        }
+
+        // Prompt user for input
+        System.out.println();
+        System.out.print("Enter the secret integer: ");
+        String answer = input.nextLine();
+        String puzzle1Answer = answer; // Store the answer for future validation
+        System.out.println("[Answer recorded]");
+    }
 
 }
