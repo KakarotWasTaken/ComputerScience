@@ -1,0 +1,80 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: November 4, 2025
+ File Name: AmmtojBalLab4c
+ Purpose: 
+ */
+
+import java.util.Scanner;
+public class AmmtojBalLab4c
+{
+  public static void main(String args[])
+  {
+    new AmmtojBalLab4c();
+  }
+  public AmmtojBalLab4c()
+  {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Please enter your age: ");
+    int age = input.nextInt();
+    System.out.println("Please enter the time of day using the 24 hour format: ");
+    int time - input.nextInt();
+    if (age >= 60)
+    {
+      if (time <= 16)
+      {
+        int ticketPrice = 7-2;
+        System.out.println("Your ticket price is $" + ticketPrice + ".");
+      }
+      else if (time >= 17 && time <24)
+      {
+       int ticketPrice = 7;
+       System.out.println("Your ticket price is $" + ticketPrice + "."); 
+      }
+      else
+      {
+        System.out.println("please enter a valid time of day following 24 hour format");
+      }
+    }
+    else if (age >= 13 && age <59)
+    {
+      if (time <= 16)
+      {
+        int ticketPrice = 10-2;
+        System.out.println("Your ticket price is $" + ticketPrice + ".");
+      }
+      else if (time >= 17 && time <24)
+      {
+       int ticketPrice = 10;
+       System.out.println("Your ticket price is $" + ticketPrice + ".");  
+      }
+      else
+      {
+        System.out.println("please enter a valid time of day following 24 hour format");
+      }
+    }
+    else if (age >= 1 && age <12)
+    {
+      if (time <= 16)
+      {
+        int ticketPrice = 5-2;
+        System.out.println("Your ticket price is $" + ticketPrice + ".");
+      }
+      else if (time >= 17 && time <24)
+      {
+       int ticketPrice = 5;
+       System.out.println("Your ticket price is $" + ticketPrice + ".");  
+      }
+      else
+      {
+        System.out.println("please enter a valid time of day following 24 hour format");
+      }
+    }
+    else
+    {
+     System.out.println("please enter a valid age");
+    }
+    input.close();
+  }
+}

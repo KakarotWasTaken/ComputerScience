@@ -1,0 +1,22 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: September 10, 2025
+ File Name: Table
+ Purpose: To use the functions of \t and \n for displaying certain text in the console.
+ */
+
+// Class
+public class Table
+{
+  // Main Method
+  public static void main (String[] args)
+  {
+    new Table();
+  }
+  // Constructor
+  public Table()
+  {
+    
+  }
+}

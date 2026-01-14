@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Area
+{
+    public static void main(String[] args)
+    {
+        new Area();
+    }
+    public Area()
+    {
+      double width;
+      double length;
+
+        // Scanner inmported
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("What is the width of the rectangle?");
+        width = input.nextDouble();
+        System.out.println("What is the length of the rectangle?");
+        length = input.nextDouble();
+
+        input.close();
+
+        double area = length * width;
+
+        System.out.println("");
+        System.out.println("The area of the rectangle is " + area + "cm^2.");
+
+        double perimeter = (length + width) * 2;
+
+        System.out.println("");
+        System.out.println("The perimeter of the rectangle is " + perimeter + "cm.");
+    }
+}

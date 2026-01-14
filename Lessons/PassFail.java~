@@ -1,0 +1,34 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: October 7, 2025
+ File Name: PassFail
+ Purpose: To determine a persons if user passes or fails depending on input grade
+ */
+
+import java.util.Scanner;
+public class PassFail
+{
+  public static void main(String[] args)
+  {
+    new PassFail();
+  }
+  public PassFail()
+  {
+    // Start user input
+    Scanner input = new Scanner(System.in);
+    
+    System.out.print("Please enter your grade: ");
+    int grade = input.nextInt();
+    
+    
+    
+    if (grade >= 50)
+      System.out.println("you have passed");
+    else if(grade 0 >= && <50)
+      System.out.println("you have failed");
+   
+    
+    input.close();
+  }
+}

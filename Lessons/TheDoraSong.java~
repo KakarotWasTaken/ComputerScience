@@ -1,0 +1,20 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: September 10, 2025
+ File Name: TheDoraSong
+ Purpose: To use the functions of \t and \n to display lyrics in the console.
+ */
+
+public class TheDoraSong
+{
+  public static void main (String[] args)
+  {
+    public TheDoraSong();
+  }
+  public TheDoraSong
+  {
+    System.out.println("\t Dora! Boots! Come on Dora!");
+  }
+  
+}

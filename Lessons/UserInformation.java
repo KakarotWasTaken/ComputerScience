@@ -1,0 +1,28 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: September 11, 2025
+ File Name: UserInformation
+ Purpose: To create 3 different variables (int,string,double) and assign them appropriate values, 
+ then display the values to the user in a story form in 3 or 4 sentences.
+ */
+
+public class UserInformation
+{
+  public static void main(String[] args)
+  {
+    new UserInformation();
+  }
+  public UserInformation()
+  {
+    // Creating Variable
+    String favFood = "chicken";
+    int favNum = 24;
+    double bankBalance = 3524.23;
+    
+    // Print variable formatted nicely
+    System.out.println("My favourite food is " + favFood + ". It taste's amazing!");
+    System.out.println("My favourite number is " + favNum + ". It's the day before my birthday!");
+    System.out.println("My balance in the bank is $" + bankBalance + ". It's saved up from work.");
+  }
+}

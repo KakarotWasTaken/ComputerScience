@@ -1,0 +1,59 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: November 4, 2025
+ File Name: AmmtojBalLab4b
+ Purpose: To determine the cost of international letters based on
+          a set cost per letter varying by the letter range,
+          collecting input from the user and determining if
+          it is in the set range, then calculating how much
+          it costs and display it back to the user.
+ */
+
+import java.util.Scanner;
+public class AmmtojBalLab4b
+{
+  public static void main(String args[])
+  {
+    new AmmtojBalLab4b();
+  }
+  public AmmtojBalLab4b()
+  {
+    Scanner input = new Scanner(System.in);
+    System.out.println("How many letters would you like?");
+    int letterCount = input.nextInt();
+    if (letterCount => 20 && letterCount <39)
+    {
+      int perLetterCost = 2
+      int letterCost = lettercount * perLetterCost;
+      System.out.println("The cost per letter is $2 each");
+      System.out.println("The total cost is $" + letterCost + ".");
+    }
+    else if (letterCount => 10 && letterCount <19)
+    {
+      int perLetterCost = 3
+      int letterCost = lettercount * perLetterCost;
+      System.out.println("The cost per letter is $3 each");
+      System.out.println("The total cost is $" + letterCost + ".");
+    }
+    else if (letterCount => 1 && letterCount <9)
+    {
+      int perLetterCost = 5
+      int letterCost = lettercount * perLetterCost;
+      System.out.println("The cost per letter is $5 each");
+      System.out.println("The total cost is $" + letterCost + ".");
+    }
+    else if (letterCount => 40)
+    {
+      int perLetterCost = 1
+      int letterCost = lettercount * perLetterCost;
+      System.out.println("The cost per letter is $1 each");
+      System.out.println("The total cost is $" + letterCost + ".");
+    }
+    else
+    {
+      System.out.println("please enter a valid number");
+    }
+    input.close();
+  }
+}

@@ -1,0 +1,19 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: September 11, 2025
+ File Name: SunnyDay
+ Purpose: Write a program named SunnyDay that would display the following message, “It is a beautiful day outside!”.
+ */
+
+public class SunnyDay
+{
+  public static void main (String[] args)
+  {
+    new SunnyDay();
+  }
+  public SunnyDay()
+  {
+    
+  }
+}

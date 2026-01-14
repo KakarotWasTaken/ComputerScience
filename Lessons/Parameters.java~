@@ -1,0 +1,27 @@
+/*
+Comment Shell
+Name: Ammtoj Bal
+File Name: Parameters
+Purpose: To print out a message using two seperate methods
+         and invoke through constructor.
+*/
+import java.util.Scanner;
+public class Parameters
+{
+  // Main Method
+  public static void main(String args[])
+  {
+    new Parameters();
+  }
+  // Constructor
+  public Parameters()
+  {
+    Scanner input = new Scanner(System.in);
+    
+    
+   
+    
+    input.close();
+  }
+ 
+}

@@ -1,0 +1,25 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ File Name: ReturnType
+ Purpose: To 
+ */
+
+import java.util.Scanner;
+public class ReturnType
+{
+  // Main Method
+  public static void main(String args[])
+  {
+    new ReturnType();
+  }
+  // Constructor
+  public ReturnType()
+  {
+    Scanner input = new Scanner(System.in);
+    
+    
+    input.close();
+  }
+  
+}

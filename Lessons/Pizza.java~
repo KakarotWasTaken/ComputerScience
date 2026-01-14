@@ -1,0 +1,30 @@
+/*
+Comment Shell
+Name: Ammtoj Bal
+File Name: Pizza
+Purpose: To determine a persons if a person wants pizza, if they do
+         then prompt a price of $5 and ask if they would still
+         like to purchase.
+*/
+
+import java.util.Scanner;
+public class Pizza
+{
+  public static void main(String[] args)
+  {
+    new Pizza();
+  }
+  public Pizza()
+  {
+    // Start user input
+    Scanner input = new Scanner(System.in);
+    System.out.print("Would you like to purchase a slice of pizza, enter y/n: ");
+    String initialPurchase = input.nextString();
+    
+    if (initialPurchase == y)
+      System.out.println("A slice of pizza is $5, would you still like to purchase it?");
+    
+    else
+      System.out.println("Goodbye!");
+  }
+}

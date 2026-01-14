@@ -1,0 +1,22 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: September 11, 2025
+ File Name: ThreeDataTypes
+ Purpose: To create 3 different variables (int,string,double) and assign them appropriate values.
+ */
+
+// Class Created
+public class ThreeDataTypes
+{
+  // Main Method 
+  public static void main(String[] args)
+  {
+    new ThreeDataTypes();
+  }
+  // Constructor
+  public ThreeDataTypes()
+  {
+    
+  }
+}

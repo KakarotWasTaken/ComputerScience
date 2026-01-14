@@ -1,0 +1,26 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: September 9, 2025
+ File Name: Courses
+ Purpose: To display the 4 courses I am taking this semester, each on a seperate line.
+ */
+
+// Class created
+public class Courses
+{
+  // Main method created
+  public static void main (String[] args)
+  {
+    new Courses();
+  } 
+  // Constructor Created
+  public Courses()
+  {
+    // Print to the console 
+    System.out.println("ICS3U: Introduction to Computer Programming.");
+    System.out.println("BAF3M0: Financial Accouting Fundamental.");
+    System.out.println("CLU3M0: Understanding Canadian Law.");
+    System.out.println("SCH3U0: Chemistry.");
+  }
+}

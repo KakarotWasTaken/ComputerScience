@@ -1,0 +1,63 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: November 4, 2025
+ File Name: vehicleClass
+ Purpose: To determine vehicle classificatiojnh
+ */
+
+import java.util.Scanner;
+public class vehicleClass
+{
+  public static void main(String[] args)
+  {
+    new vehicleClass();
+  }
+  public vehicleClass()
+  {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Does your vehicle have two wheels or 4+ wheels");
+    String vehicleWheels = input.nextLine();
+    
+    if (vehicleWheels.equals("2") || vehicleWheels.equals("two"))
+    {
+      System.out.println("Does your vehicle have an engine");
+      String engineTrue = input.nextLine();
+      if (engineTrue.equals("Yes")|| engineTrue.equals("yes") || engineTrue.equals("y"))
+      {
+        System.out.println("your vehicle is a motorcycle");
+      }
+      else if (engineTrue.equals("No") || engineTrue.equals("no") || engineTrue.equals("n"))
+      {
+        System.out.println("your vehjicle is a bicycle");
+      }
+      else
+      {
+        System.out.println("yout vehicle cannot be classified (invalid input)");
+      }
+    }
+    else if(vehicleWheels.equals("4") || vehicleWheels.equals("Four") || vehicleWheels.equals("four") || vehicleWheels.equals("more"))
+    {
+      System.out.println("Is your vehicle used for personal transportation or transporting goods");
+      String vehicleUse = input.nextLine();
+      if (vehicleUse.equals("personal transportation") || vehicleUse.equals("personal") || vehicleUse.equals("personal use"))
+      {
+        System.out.println("your vehicle is a car");
+      }
+      else if (vehicleUse.equals("transporting goods") || vehicleUse.equals("transport") || vehicleUse.equals("transport use"))
+      {
+        System.out.println("your vehicle is a truck");
+      }
+      else
+      {
+        System.out.println("your vehicle cannot be classified(invalid input)");
+      }
+    }
+    else
+    {
+      System.out.println("your vehicle cannot be classified(invalid input)");
+      System.out.println("enter two or four");
+    }
+    input.close();
+  }   
+}

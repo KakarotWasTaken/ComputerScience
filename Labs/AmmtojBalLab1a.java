@@ -1,0 +1,36 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: September 25, 2025
+ File Name: AmmtojBalLab1a
+ Purpose: To display the participants BMI rounded to 2 decimal places
+          after their user input of weight and height following the
+          prompted question of asking for weight and height.
+ */
+
+import java.util.Scanner;
+public class AmmtojBalLab1a
+{
+  public static void main(String[] args)
+  {
+    new AmmtojBalLab1a();
+  }
+  public AmmtojBalLab1a()
+  {
+    // User input started
+    Scanner input = new Scanner(System.in);
+    
+    // Prompt question and store input into variable
+    System.out.println("Please enter your weight in kgs: ");
+    double weight = input.nextDouble();
+    System.out.println("Please enter your height in meters: ");
+    double height = input.nextDouble();
+    
+    input.close(); // Close the input
+    
+    double bmi = weight / (height * height); // Calculate BMI using variables
+    
+    // Print the final BMI calculated
+    System.out.println("Your BMI is: " + String.format("%.2f", bmi) + ".");
+  }
+}

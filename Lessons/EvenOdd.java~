@@ -1,0 +1,25 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: October 6, 2025
+ File Name: EvenOdd
+ Purpose: To as the user if the number entered is even or odd, then displayed back to user.
+ */
+
+import java.util.Scanner;
+public class EvenOdd
+{
+  public static void main(String[] args)
+  {
+    new EvenOdd();
+  }
+  public EvenOdd()
+  {
+    // Start user input
+    Scanner input = new Scanner(System.in);
+    
+    
+    
+    input.close();
+  }
+}

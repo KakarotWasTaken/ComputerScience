@@ -1,0 +1,31 @@
+/*
+ Comment Shell
+ Name: Ammtoj Bal
+ Due Date: November 4, 2025
+ File Name: AmmtojBalLab4a
+ Purpose: To determine Mama Bears bowl weight(the middle value of all three entered)
+          and display it back to the user
+ */
+
+import java.util.Scanner;
+public class AmmtojBalLab4a
+{
+  public static void main(String args[])
+  {
+    new AmmtojBalLab4a();
+  }
+  public AmmtojBalLab4a()
+  {
+    Scanner input = new Scanner(System.in);
+    System.out.println("please enter bowl 1 weight: ");
+    int bowlOne = input.nextInt();
+    System.out.println("please enter bowl 2 weight: ");
+    int bowlTwo = input.nextInt();
+    System.out.println("please enter bowl 3 weight: ");
+    int bowlThree = input.nextInt();
+    
+    
+    
+    input.close();
+  }
+}

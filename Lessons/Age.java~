@@ -1,0 +1,26 @@
+/*
+Comment Shell
+Name: Ammtoj Bal
+File Name: Age
+Purpose: To determine a persons age and check if they qualify to write their learners test
+*/
+
+import java.util.Scanner;
+public Age
+{
+  public static void main(String[] args)
+  {
+    new Age();
+  }
+  public Age()
+  {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Please enter your age: ");
+    int age = input.nextInt();
+    
+   
+    
+    
+    input.close();
+  }
+}
