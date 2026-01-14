@@ -22,21 +22,18 @@ public class AmmtojBalGameWithCommentsSummative1
     System.out.println("=======================================");
     System.out.println(" Welcome to: Escape Room Adventure");
     System.out.println(" By: Ammtoj Bal");
-    System.out.println("=======================================");
-    System.out.println();
-    System.out.println("This is a text-based escape room game. Use the menu below to proceed (Appears in 5 seconds).");
-    System.out.println();
+    System.out.println("======================================= \n");
+    System.out.println("This is a text-based escape room game. Use the menu below to proceed (Appears in 5 seconds). \n");
     clearScreen();
 
     // Main menu loop
     int keepRunning = 0;
     while (keepRunning != 41)
     {
-      System.out.println("--- Main Menu ---");
+      System.out.println("--- Main Menu --- \n");
       System.out.println("1. Read the instructions on how to play");
       System.out.println("2. Play the game");
-      System.out.println("3. Quit the game");
-      System.out.println();
+      System.out.println("3. Quit the game \n");
       System.out.print("Enter your choice (1-3): ");
       int choice = getMenuChoice(input);
 
@@ -44,8 +41,7 @@ public class AmmtojBalGameWithCommentsSummative1
       if (choice == 1)
       {
         System.out.println("--- Instructions ---");
-        System.out.println("You wake up in a locked room. Solve puzzles to escape.");
-        System.out.println();
+        System.out.println("You wake up in a locked room. Solve puzzles to escape. \n");
         System.out.print("Press Enter to return to the Main Menu...");
         input.nextLine();
       }
@@ -114,7 +110,7 @@ public class AmmtojBalGameWithCommentsSummative1
         System.out.println("--- Welcome to the Game! ---");
         System.out.println("Let's begin with Puzzle 1...");
         clearScreen();
-        System.out.println("--- Puzzle 1 ---");
+        System.out.println("--- Puzzle 1 --- \n");
         // Generate the three sets of numbers that sum to 67
         // The number generation approach is adapted from GeeksforGeeks https://www.geeksforgeeks.org/dsa/random-list-of-m-non-negative-integers-whose-sum-is-n
         int m = 3; // Three numbers per set
