@@ -4,7 +4,7 @@ Name: Ammtoj Bal
 File Name: AmmtojBalGameWithoutCommentsSummative1.java
 Due Date: January 16, 2026
 Purpose:
- */
+*/
 
 import java.util.Scanner;
 
@@ -105,6 +105,7 @@ public class AmmtojBalGameWithCommentsSummative1
       }
     }
   }
+  // Start game method
    public void startGame(Scanner input)
     {
         System.out.println("--- Welcome to the Game! ---");
@@ -138,7 +139,7 @@ public class AmmtojBalGameWithCommentsSummative1
         String answer = input.nextLine();
         String puzzle1Answer = answer; // Store the answer for future validation
         System.out.println("[Answer recorded]");
-
+        // Proceed to the menu after puzzle completion, prompt second puzzle or return to main menu.
         int validChoice = 0;
         while (validChoice != 41)
         {
