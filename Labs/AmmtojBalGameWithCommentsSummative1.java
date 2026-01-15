@@ -23,7 +23,7 @@ public class AmmtojBalGameWithCommentsSummative1
     System.out.println(" Welcome to: Escape Room Adventure");
     System.out.println(" By: Ammtoj Bal");
     System.out.println("======================================= \n");
-    System.out.println("This is a text-based escape room game. Use the menu below to proceed (Appears in 5 seconds). \n");
+    System.out.println("This is a text-based escape room game. Use the menu below to proceed (Appears in 2.5 seconds). \n");
     clearScreen();
 
     // Main menu loop
@@ -44,6 +44,7 @@ public class AmmtojBalGameWithCommentsSummative1
         System.out.println("You wake up in a locked room. Solve puzzles to escape. \n");
         System.out.print("Press Enter to return to the Main Menu...");
         input.nextLine();
+        clearScreen();
       }
       else if (choice == 2)
       {
@@ -66,7 +67,7 @@ public class AmmtojBalGameWithCommentsSummative1
     // Clear the screen method, using try, catch and thread, found online at https://www.geeksforgeeks.org/java/thread-sleep-method-in-java-with-examples/
     try 
     {
-      Thread.sleep(5000); // Wait for 5 seconds before clearing
+      Thread.sleep(2500); // Wait for 2.5 seconds before clearing
     } 
     catch (InterruptedException e) 
     {
@@ -107,7 +108,7 @@ public class AmmtojBalGameWithCommentsSummative1
   }
   // Start game method
    public void startGame(Scanner input)
-    {
+    { 
         System.out.println("--- Welcome to the Game! ---");
         System.out.println("Let's begin with Puzzle 1...");
         clearScreen();
@@ -152,12 +153,14 @@ public class AmmtojBalGameWithCommentsSummative1
           if (choice.equals("1") || choice.equals("one"))
           {
             System.out.println("\n--- Continuing to the next puzzle... ---");
+            clearScreen();
             System.out.println("ye");
             validChoice = 41; // Exit the loop 
           }
           else if (choice.equals("2") || choice.equals("two"))
           {
             System.out.println("\n--- Returning to Main Menu... ---");
+            clearScreen();
             validChoice = 41; // Exit the loop (return to main menu)
           }
           else
