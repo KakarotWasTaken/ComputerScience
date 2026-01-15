@@ -235,7 +235,7 @@ public class AmmtojBalGameWithCommentsSummative1
     boolean answerLoop3 = true; // Loop until the correct answer is given
     while (answerLoop3)
     {
-      System.out.println("Enter the secret word: ");
+      System.out.print("Enter the secret word: ");
       String answerPuzzleThree =  input.nextLine().toLowerCase(); 
       // Check if the answer is correct
       if(answerPuzzleThree.equals(hiddenWord))
@@ -258,13 +258,13 @@ public class AmmtojBalGameWithCommentsSummative1
     // Start Puzzle 4
     System.out.println("--- Puzzle 4 --- \n"); 
     System.out.println("A final riddle is inscribed on the door just above a keyboard:"); 
-    System.out.println ("\"I am always ahead but never behind. What am I\"");
+    System.out.println ("\n\"I am always ahead but never behind. What am I\"\n");
     // Declare riddle answer as variable
     String riddleAnswer = "time";
     // Start attempt loop and tracking for puzzle 4
     for (int i = 1; i <= 5; i++) // Allow up to 5 attempts
     {
-      System.out.println("Enter your answer (Attempt " + i + " of 5): ");
+      System.out.print("Enter your answer (Attempt " + i + " of 5): ");
       String answerPuzzleFour = input.nextLine().toLowerCase();
       // Check if the answer is correct
       if (answerPuzzleFour.equals(riddleAnswer))
