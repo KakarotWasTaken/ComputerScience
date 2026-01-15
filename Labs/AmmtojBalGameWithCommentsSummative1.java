@@ -23,7 +23,7 @@ public class AmmtojBalGameWithCommentsSummative1
     System.out.println(" Welcome to: Escape Room Adventure");
     System.out.println(" By: Ammtoj Bal");
     System.out.println("======================================= \n");
-    System.out.println("This is a text-based escape room game. Use the menu below to proceed (Appears in 2.5 seconds). \n");
+    System.out.println("This is a text-based escape room game. Use the menu below to proceed (Appears soon). \n");
     clearScreen();
 
     // Main menu loop
@@ -67,7 +67,7 @@ public class AmmtojBalGameWithCommentsSummative1
     // Clear the screen method, using try, catch and thread, found online at https://www.geeksforgeeks.org/java/thread-sleep-method-in-java-with-examples/
     try 
     {
-      Thread.sleep(2500); // Wait for 2.5 seconds before clearing
+      Thread.sleep(5000); // Wait for 2.5 seconds before clearing
     } 
     catch (InterruptedException e) 
     {
@@ -110,14 +110,17 @@ public class AmmtojBalGameWithCommentsSummative1
    public void startGame(Scanner input)
     { 
         System.out.println("--- Welcome to the Game! ---");
-        System.out.println("Let's begin with Puzzle 1...");
+        System.out.println("Let's begin with Puzzle 1... \n");
+        System.out.println("Upon waking up, you find three sets of numbers displayed on the wall, below resides a iron box with a keypad.");
+        System.out.println("Looking closer, you see a note that reads:");
+        System.out.println("The key you seek is hidden within the sums of these numbers. Find that total, and it shall start your path to freedom.");
         clearScreen();
         System.out.println("--- Puzzle 1 --- \n");
         // Generate the three sets of numbers that sum to 67
         // The number generation approach is adapted from GeeksforGeeks https://www.geeksforgeeks.org/dsa/random-list-of-m-non-negative-integers-whose-sum-is-n
         int m = 3; // Three numbers per set
         int n = 67; // Target sum per set
-        System.out.println("Three sets of numbers that each sum to 67:");
+        System.out.println("Three sets of numbers on the wall are:");
 
         for (int set = 0; set < 3; set++)
         {
@@ -135,11 +138,28 @@ public class AmmtojBalGameWithCommentsSummative1
         }
 
         // Prompt user for input
-        System.out.println();
-        System.out.print("Enter the secret integer: ");
-        String answer = input.nextLine();
-        String puzzle1Answer = answer; // Store the answer for future validation
-        System.out.println("[Answer recorded]");
+        String correctAnswer = "67";
+        boolean loop = true;
+        while (loop)
+        {
+            System.out.println();
+            System.out.print("Enter the secret integer: ");
+            String answer = input.nextLine();
+            if (answer.equals(correctAnswer))
+            {
+                System.out.println("Correct! The iron box clicks open, revealing a key to the next door.");
+                System.out.println("You've successfully opened the next door, however a wake of fog fills the room and you lose conciousness. \n");
+                clearScreen();
+                loop = false; // Exit the loop
+            }
+            else
+            {
+                System.out.println("Incorrect. Try again.");
+            }
+        }
+       
+       
+       
         // Proceed to the menu after puzzle completion, prompt second puzzle or return to main menu.
         int validChoice = 0;
         while (validChoice != 41)
@@ -153,9 +173,8 @@ public class AmmtojBalGameWithCommentsSummative1
           if (choice.equals("1") || choice.equals("one"))
           {
             System.out.println("\n--- Continuing to the next puzzle... ---");
-            clearScreen();
-            System.out.println("ye");
-            validChoice = 41; // Exit the loop 
+            System.out.println("\n--- Puzzle 2 ---"); 
+            
           }
           else if (choice.equals("2") || choice.equals("two"))
           {
