@@ -1,9 +1,10 @@
 /*
 Summative Project - Escape Room Adventure
 Name: Ammtoj Bal
-File Name: AmmtojBalGameWithoutCommentsSummative1.java
+File Name: AmmtojBalGameWithCommentsSummative1.java
 Due Date: January 16, 2026
-Purpose:
+Purpose: To create a game using all the concepts learned in class, applying them in a creative manner.
+         In this case, an escape room text-based game is created, where the user must solve puzzles to escape.
 New Concepts: The number generation approach is adapted from GeeksforGeeks https://www.geeksforgeeks.org/dsa/random-list-of-m-non-negative-integers-whose-sum-is-n
               1. What the concept is:
               This is a random number generator that creates an array of random integers that their sum equals a fixed number.
@@ -121,7 +122,6 @@ public class AmmtojBalGameWithCommentsSummative1
       System.out.println("The exepediation that took you here was a mess, but one thing is clear: ");
       System.out.println("You must escape.");
       clearScreen();
-
       // invoke runPuzzles method and store the result
       boolean success = runPuzzles(); 
       // Handle the final result based on success or failure
