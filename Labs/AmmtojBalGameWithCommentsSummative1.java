@@ -139,8 +139,8 @@ public class AmmtojBalGameWithCommentsSummative1
         // Prompt user for input
         String correctAnswer1 = "67";
         String correctAnswer2 = "sixty seven";
-        boolean loop = true;
-        while (loop)
+        boolean answerLoop1 = true;
+        while (answerLoop1)
         {
             System.out.println();
             System.out.print("Enter the secret integer: ");
@@ -150,7 +150,7 @@ public class AmmtojBalGameWithCommentsSummative1
                 System.out.println("Correct! The iron box clicks open, revealing a key to the next door.");
                 System.out.println("You've successfully opened the next door, however a wake of fog fills the room and you lose conciousness. \n");
                 clearScreen();
-                loop = false; // Exit the loop
+                answerLoop1 = false; // Exit the loop
             }
             else
             {
@@ -173,8 +173,39 @@ public class AmmtojBalGameWithCommentsSummative1
           if (choice.equals("1") || choice.equals("one"))
           {
             System.out.println("\n--- Continuing to the next puzzle... ---");
-            System.out.println("\n--- Puzzle 2 ---"); 
+            clearScreen();
+            System.out.println("You wake up in a new room, dimly lit with a single table in the center. On the table lies a locked box with another keypad on it.");
+            System.out.println("Beside the box, there's a note that reads:");
+            System.out.println("Given is a product, to obtain the key find the numbers in close relation to it.");
+            System.out.println("Hint: Think multiplication.");
+            clearScreen();
+            System.out.println("--- Puzzle 2 ---"); 
+
+            double num1 = 41.14;
+            double num2 = 66.77;
+            double result = num1 * num2;
+            System.out.printf("The product written on the note is  " + String.format("%.2f", result) + ".");
             
+            boolean answerLoop2 = true; // Loop until the correct answer is given
+            while (answerLoop2)
+            {
+                System.out.print("\nEnter the first integer: ");
+                double userNum1 = input.nextDouble();
+                System.out.print("Enter the second integer: ");
+                double userNum2 = input.nextDouble();
+                System.out.println();
+                double userNum = userNum1 * userNum2; 
+
+                if (String.format("%.2f", userNum).equals(String.format("%.2f", result))) // Match against the rounded result
+                {
+                    System.out.println("\nCorrect! The door unlocks, and you proceed to the next puzzle.\n");
+                    answerLoop2 = false; // Exit puzzle loop
+                }
+                else
+                {
+                    System.out.println("\nIncorrect. Try again.");
+                }
+            }
           }
           else if (choice.equals("2") || choice.equals("two"))
           {
