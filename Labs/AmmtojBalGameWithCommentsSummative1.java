@@ -175,8 +175,8 @@ public class AmmtojBalGameWithCommentsSummative1
     {
       System.out.println();
       System.out.print("Enter the secret integer: ");
-      String answer = input.nextLine().toLowerCase();
-      if (answer.equals(correctAnswer1) || answer.equals(correctAnswer2))
+      String answerPuzzleOne = input.nextLine().toLowerCase();
+      if (answerPuzzleOne.equals(correctAnswer1) || answerPuzzleOne.equals(correctAnswer2))
       {
         System.out.println("\nCorrect! The iron box clicks open, revealing a key to the next door.");
         System.out.println("You've successfully opened the next door, however a wake of fog fills the room and you lose conciousness.");
@@ -200,12 +200,12 @@ public class AmmtojBalGameWithCommentsSummative1
     double num1 = 41.14;
     double num2 = 66.77;
     double result = num1 * num2;
-    System.out.printf("The product written on the note is  " + String.format("%.2f", result) + ". \n");
+    System.out.printf("The product written on the note is " + String.format("%.2f", result) + ". \n");
     
     boolean answerLoop2 = true; // Loop until the correct answer is given
     while (answerLoop2)
     {
-      System.out.print("Enter the first integer: ");
+      System.out.print("\nEnter the first integer: ");
       double userNum1 = input.nextDouble();
       System.out.print("Enter the second integer: ");
       double userNum2 = input.nextDouble();
@@ -223,7 +223,32 @@ public class AmmtojBalGameWithCommentsSummative1
       }
     }
 
-    input.close();
+    System.out.println("\n--- Continuing to Puzzle 3. --- \n");
+    System.out.println("You enter a new room, inscriptions all over the walls, in blood red, \"FIND THE KEY.\"");
+    System.out.println("In the center of the room, there's a pedestal with a riddle with a red font inscribed on it.");
+    clearScreen();
+    String hiddenWord = "key";
+    System.out.println("--- Puzzle 3 --- \n"); 
+    System.out.println("\"Amidst the chaos, the key lies hidden in plain sight.\"");
+    boolean answerLoop3 = true; // Loop until the correct answer is given
+    while (answerLoop3 = true)
+    {
+      System.out.println("Enter the secret word: ");
+      String answerPuzzleThree =  input.nextLine().toLowerCase(); 
+      if(answerPuzzleThree.equals(hiddenWord))
+      {
+        System.out.println("Correct! The walls rumble, and a path forward reveals itself.");
+        clearScreen();
+        answerLoop3 = false; // Exit puzzle loop
+      }
+      else
+      {
+        System.out.println("Incorrect. Try again.");
+      }
+    }
+    
+
+    
     return isSuccessful;
     
   }
