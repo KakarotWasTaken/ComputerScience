@@ -136,16 +136,16 @@ public class AmmtojBalGameWithCommentsSummative1
             }
             System.out.println(); // Move to the next line after printing a set
         }
-
         // Prompt user for input
-        String correctAnswer = "67";
+        String correctAnswer1 = "67";
+        String correctAnswer2 = "sixty seven";
         boolean loop = true;
         while (loop)
         {
             System.out.println();
             System.out.print("Enter the secret integer: ");
-            String answer = input.nextLine();
-            if (answer.equals(correctAnswer))
+            String answer = input.nextLine().toLowerCase();
+            if (answer.equals(correctAnswer1) || answer.equals(correctAnswer2))
             {
                 System.out.println("Correct! The iron box clicks open, revealing a key to the next door.");
                 System.out.println("You've successfully opened the next door, however a wake of fog fills the room and you lose conciousness. \n");
