@@ -54,6 +54,8 @@ public class AmmtojBalGameWithCommentsSummative1
       {
         System.out.println("--- Instructions ---");
         System.out.println("You wake up in a locked room. Solve puzzles to escape.");
+        System.out.println("Input answers when prompted.");
+        System.out.println("Type '999' during puzzles to give up and quit the game anytime.");
         clearScreen();
       }
       else if (choice == 2)
@@ -76,8 +78,8 @@ public class AmmtojBalGameWithCommentsSummative1
     Scanner input = new Scanner(System.in);
     System.out.println("\nPress enter to proceed:");
     input.nextLine(); // Wait for user to press enter
-    // Print 15 new lines to simulate clearing the screen
-    for (int i = 0; i < 15; i++) 
+    // Print 67 new lines to simulate clearing the screen
+    for (int i = 0; i < 67; i++) 
     {
       System.out.println();
     }
@@ -111,6 +113,7 @@ public class AmmtojBalGameWithCommentsSummative1
     { 
       System.out.println("\n--- Welcome to Escape Room Adventure! ---");
       System.out.println("Your goal is to solve all the puzzles and escape the room.");
+      System.out.println("Type '999' during puzzles to give up and quit the game anytime.");
       System.out.println("Good luck!");
       clearScreen();
       System.out.println("You wake up in a cold, barely lit room. The faint scent of wet rocks filling the air.");
@@ -160,7 +163,7 @@ public class AmmtojBalGameWithCommentsSummative1
     // See New Concepts header in comment shell for details
     int m = 3; // Three numbers per set
     int n = 67; // Target sum per set
-    System.out.println("Three sets of numbers on the wall are:");
+    System.out.println("Three sets of numbers on the wall are: \n");
     for (int set = 0; set < 3; set++)
     {
       int[] arr = new int[m];
@@ -185,8 +188,15 @@ public class AmmtojBalGameWithCommentsSummative1
       System.out.println();
       System.out.print("Enter the secret integer: ");
       String answerPuzzleOne = input.nextLine().toLowerCase();
+      // Check if the user wants to quit
+      if(answerPuzzleOne.equals("999"))
+      {
+        System.out.println("\nYou have chosen to quit the game. Goodbye!");
+        clearScreen();
+        return false; // End the game if user chooses to quit
+      }
       // Check if the answer is correct
-      if (answerPuzzleOne.equals(correctAnswer1) || answerPuzzleOne.equals(correctAnswer2))
+      else if (answerPuzzleOne.equals(correctAnswer1) || answerPuzzleOne.equals(correctAnswer2))
       {
         System.out.println("\nCorrect! The iron box clicks open, revealing a key to the next door.");
         System.out.println("You've successfully opened the next door, however a wake of fog fills the room and you lose conciousness.");
@@ -219,8 +229,23 @@ public class AmmtojBalGameWithCommentsSummative1
     {
       System.out.print("\nEnter the first integer: ");
       double userNum1 = input.nextDouble();
+      // Check if the user wants to quit
+      if(userNum1 == 999)
+      {
+        System.out.println("\nYou have chosen to quit the game. Goodbye!");
+        clearScreen();
+        return false; // End the game if user chooses to quit
+      }
       System.out.print("Enter the second integer: ");
       double userNum2 = input.nextDouble();
+      // Check if the user wants to quit
+      if(userNum2 == 999)
+      {
+        System.out.println("\nYou have chosen to quit the game. Goodbye!");
+        clearScreen();
+        return false; // End the game if user chooses to quit
+      }
+      // Calculate the user's product
       double userNum = userNum1 * userNum2; 
       input.nextLine(); // Fix the scanner buffer issue, puzzle three has an input before one is entered.
       // Check if the user's product matches the correct product, both rounded to 2 decimal places.
@@ -242,7 +267,7 @@ public class AmmtojBalGameWithCommentsSummative1
     clearScreen();
     // Start Puzzle 3
     System.out.println("--- Puzzle 3 --- \n"); 
-    System.out.println("\"Amidst the chaos, the key lies hidden in plain sight.\"");
+    System.out.println("\"Amidst the chaos, the key lies hidden in plain sight.\"\n");
     // Declare hidden word answer
     String hiddenWord = "key";
     // Start answer loop for puzzle 3
@@ -250,9 +275,16 @@ public class AmmtojBalGameWithCommentsSummative1
     while (answerLoop3)
     {
       System.out.print("Enter the secret word: ");
-      String answerPuzzleThree =  input.nextLine().toLowerCase(); 
+      String answerPuzzleThree = input.nextLine().toLowerCase(); 
+      // Check if the user wants to quit
+      if(answerPuzzleThree.equals("999"))
+      {
+        System.out.println("\nYou have chosen to quit the game. Goodbye!");
+        clearScreen();
+        return false; // End the game if user chooses to quit
+      }
       // Check if the answer is correct
-      if(answerPuzzleThree.equals(hiddenWord))
+      else if(answerPuzzleThree.equals(hiddenWord))
       {
         System.out.println("\n Correct! The walls rumble, and a path forward reveals itself.");
         clearScreen();
@@ -280,8 +312,15 @@ public class AmmtojBalGameWithCommentsSummative1
     {
       System.out.print("Enter your answer (Attempt " + i + " of 5): ");
       String answerPuzzleFour = input.nextLine().toLowerCase();
+      // Check if the user wants to quit
+      if(answerPuzzleFour.equals("999"))
+      {
+        System.out.println("\nYou have chosen to quit the game. Goodbye!");
+        clearScreen();
+        return false; // End the game if user chooses to quit
+      }
       // Check if the answer is correct
-      if (answerPuzzleFour.equals(riddleAnswer))
+      else if (answerPuzzleFour.equals(riddleAnswer))
       {
         System.out.println("Correct! The grand door opens, revealing your path to freedom.");
         clearScreen();
