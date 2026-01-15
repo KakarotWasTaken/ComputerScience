@@ -21,23 +21,21 @@ New Concepts: The number generation approach is adapted from GeeksforGeeks https
 */
 
 import java.util.Scanner;
-public class AmmtojBalGameWithCommentsSummative1
+public class AmmtojBalGameWithoutCommentsSummative1
 {
   public static void main(String[] args)
   {
-    new AmmtojBalGameWithCommentsSummative1();
+    new AmmtojBalGameWithoutCommentsSummative1();
   }
-  public AmmtojBalGameWithCommentsSummative1()
+  public AmmtojBalGameWithoutCommentsSummative1()
   {
     Scanner input = new Scanner(System.in);
-    // Show the introduction screen
     System.out.println("=======================================");
     System.out.println(" Welcome to: Escape Room Adventure");
     System.out.println(" By: Ammtoj Bal");
     System.out.println("======================================= \n");
     System.out.println("This is a text-based escape room game. Use the menu provided to proceed.");
     clearScreen();
-    // Main menu loop
     int keepRunning = 0;
     while (keepRunning != 41)
     {
@@ -64,25 +62,22 @@ public class AmmtojBalGameWithCommentsSummative1
       {
         System.out.println("--- Quit ---");
         System.out.println("Thank you for trying Escape Room Adventure. Goodbye!");
-        keepRunning = 41; // Exit the loop to quit the game
+        keepRunning = 41; 
       }
       System.out.println();
     }
     input.close();
   }
-  // Clear the screen method, simulates clearing the console by printing new lines upon user input
   public void clearScreen()
   {
     Scanner input = new Scanner(System.in);
     System.out.println("\nPress enter to proceed:");
-    input.nextLine(); // Wait for user to press enter
-    // Print 67 new lines to simulate clearing the screen
+    input.nextLine();
     for (int i = 0; i < 67; i++) 
     {
       System.out.println();
     }
   }
-  // Reads integer choice from the user in the menu and returns value
   public int getMenuChoice(Scanner input)
   {
     while (true)
@@ -106,7 +101,6 @@ public class AmmtojBalGameWithCommentsSummative1
       }
     }
   }
-  // Handle game method, tells user success or failure at the end of the game, invoked another method to runs puzzles
    public void handleGame(Scanner input)
     { 
       System.out.println("\n--- Welcome to Escape Room Adventure! ---");
@@ -123,9 +117,7 @@ public class AmmtojBalGameWithCommentsSummative1
       System.out.println("The exepediation that took you here was a mess, but one thing is clear: ");
       System.out.println("You must escape.");
       clearScreen();
-      // invoke runPuzzles method and store the result
       boolean success = runPuzzles(); 
-      // Handle the final result based on success or failure
       if (success) 
       {
         System.out.println("\n--- Congratulations! --- \n");
@@ -144,10 +136,8 @@ public class AmmtojBalGameWithCommentsSummative1
         clearScreen();
       }
     }
-  // Run puzzles method, contains all puzzles to be ran and returns user success as a boolean value
    public boolean runPuzzles()
     {
-    // set up successful variable
     boolean isSuccessful = true;
     Scanner input = new Scanner(System.in);
     System.out.println("--- Let's begin with Puzzle 1. ---\n");
@@ -155,169 +145,141 @@ public class AmmtojBalGameWithCommentsSummative1
     System.out.println("Looking closer, you see a note that reads:");
     System.out.println("The key you seek is hidden within the sums of these numbers. Find that total, and it shall start your path to freedom.");
     clearScreen();
-    // Start Puzzle 1
     System.out.println("--- Puzzle 1 --- \n");
-    // The number generation approach is adapted from GeeksforGeeks https://www.geeksforgeeks.org/dsa/random-list-of-m-non-negative-integers-whose-sum-is-n
-    // See New Concepts header in comment shell for details
-    int m = 3; // Three numbers per set
-    int n = 67; // Target sum per set
+    int m = 3;
+    int n = 67;
     System.out.println("Three sets of numbers on the wall are: \n");
     for (int set = 0; set < 3; set++)
     {
       int[] arr = new int[m];
       for (int i = 0; i < n; i++)
       {
-        int randomIndex = (int)(Math.random() * m); // Generate random index
-        arr[randomIndex]++; // Increase random index
+        int randomIndex = (int)(Math.random() * m);
+        arr[randomIndex]++;
       }
       for (int number : arr)
       {
         System.out.print(number + " ");
       }
-      System.out.println(); // Move to the next line after printing a set
+      System.out.println();
     }
-    // Decalre correct answers
     String correctAnswer1 = "67";
     String correctAnswer2 = "sixty seven";
-    // Start answer loop for puzzle 1
     boolean answerLoop1 = true;
     while (answerLoop1)
     {
       System.out.println();
       System.out.print("Enter the secret integer: ");
       String answerPuzzleOne = input.nextLine().toLowerCase();
-      // Check if the user wants to quit
       if(answerPuzzleOne.equals("999"))
       {
         System.out.println("\nYou have chosen to quit the game. Goodbye!");
         clearScreen();
-        return false; // End the game if user chooses to quit
+        return false; 
       }
-      // Check if the answer is correct
       else if (answerPuzzleOne.equals(correctAnswer1) || answerPuzzleOne.equals(correctAnswer2))
       {
         System.out.println("\nCorrect! The iron box clicks open, revealing a key to the next door.");
         System.out.println("You've successfully opened the next door, however a wake of fog fills the room and you lose conciousness.");
         clearScreen();
-        answerLoop1 = false; // Exit the loop
+        answerLoop1 = false; 
       }
       else
       {
         System.out.println("Incorrect. Try again.");
       }
     }
-    // Second Puzzle Dialogue
     System.out.println("\n--- Continuing to Puzzle 2. --- \n");
     System.out.println("You wake up in a new room, dimly lit with a single table in the center. On the table lies a locked box with another keypad on it.");
     System.out.println("Beside the box, there's a note that reads:");
     System.out.println("Given is a product, to obtain the key find the numbers in close relation to it.");
     System.out.println("Hint: Think multiplication.");
     clearScreen();
-    // Start Second Puzzle
     System.out.println("--- Puzzle 2 --- \n"); 
-    // Puzzle 2 calculations
     double num1 = 41.14;
     double num2 = 66.77;
     double result = num1 * num2;
-    // Display the rounded product to the user
     System.out.printf("The product written on the note is " + String.format("%.2f", result) + ". \n");
-    // Loop until the correct answer is given
     boolean answerLoop2 = true; 
     while (answerLoop2)
     {
       System.out.print("\nEnter the first integer: ");
       double userNum1 = input.nextDouble();
-      // Check if the user wants to quit
       if(userNum1 == 999)
       {
         System.out.println("\nYou have chosen to quit the game. Goodbye!");
         clearScreen();
-        return false; // End the game if user chooses to quit
+        return false; 
       }
       System.out.print("Enter the second integer: ");
       double userNum2 = input.nextDouble();
-      // Check if the user wants to quit
       if(userNum2 == 999)
       {
         System.out.println("\nYou have chosen to quit the game. Goodbye!");
         clearScreen();
-        return false; // End the game if user chooses to quit
+        return false; 
       }
-      // Calculate the user's product
       double userNum = userNum1 * userNum2; 
-      input.nextLine(); // Fix the scanner buffer issue, puzzle three has an input before one is entered.
-      // Check if the user's product matches the correct product, both rounded to 2 decimal places.
+      input.nextLine(); 
       if (String.format("%.2f", userNum).equals(String.format("%.2f", result))) 
       {
         System.out.println("\nCorrect! The door unlocks, and you proceed to the next puzzle.");
         clearScreen();
-        answerLoop2 = false; // Exit puzzle loop
+        answerLoop2 = false; 
       }
       else
       {
         System.out.println("\nIncorrect. Try again.");
       }
     }
-    // Puzzle 3 Dialogue
     System.out.println("\n--- Continuing to Puzzle 3. --- \n");
     System.out.println("You enter a new room, inscriptions all over the walls, in blood red, \"FIND THE KEY.\"");
     System.out.println("In the center of the room, there's a pedestal with a riddle with a red font inscribed on it.");
     clearScreen();
-    // Start Puzzle 3
     System.out.println("--- Puzzle 3 --- \n"); 
     System.out.println("\"Amidst the chaos, the key lies hidden in plain sight.\"\n");
-    // Declare hidden word answer
     String hiddenWord = "key";
-    // Start answer loop for puzzle 3
-    boolean answerLoop3 = true; // Loop until the correct answer is given
+    boolean answerLoop3 = true;
     while (answerLoop3)
     {
       System.out.print("Enter the secret word: ");
       String answerPuzzleThree = input.nextLine().toLowerCase(); 
-      // Check if the user wants to quit
       if(answerPuzzleThree.equals("999"))
       {
         System.out.println("\nYou have chosen to quit the game. Goodbye!");
         clearScreen();
-        return false; // End the game if user chooses to quit
+        return false;
       }
-      // Check if the answer is correct
       else if(answerPuzzleThree.equals(hiddenWord))
       {
         System.out.println("\n Correct! The walls rumble, and a path forward reveals itself.");
         clearScreen();
-        answerLoop3 = false; // Exit puzzle loop
+        answerLoop3 = false;
       }
       else
       {
         System.out.println("Incorrect. Try again.");
       }
     }
-    // Puzzle 4 Dialogue
     System.out.println("\n--- Continuing to Puzzle 4. --- \n");
     System.out.println("A grand door reveals itself to you, with the handprints of all who came before you");
     System.out.println("A caution warns outside, \"Only the worthy may pass through. Prove your worth by solving the final riddle.\"");
     System.out.println("Another note reads: \"Try at the risk of your life, for 5 failed attempts will lead to your demise.\"");
     clearScreen();
-    // Start Puzzle 4
     System.out.println("--- Puzzle 4 --- \n"); 
     System.out.println("A final riddle is inscribed on the door just above a keyboard:"); 
     System.out.println ("\n\"I am always ahead but never behind. What am I\"\n");
-    // Declare riddle answer as variable
     String riddleAnswer = "time";
-    // Start attempt loop and tracking for puzzle 4
-    for (int i = 1; i <= 5; i++) // Allow up to 5 attempts
+    for (int i = 1; i <= 5; i++)
     {
       System.out.print("Enter your answer (Attempt " + i + " of 5): ");
       String answerPuzzleFour = input.nextLine().toLowerCase();
-      // Check if the user wants to quit
       if(answerPuzzleFour.equals("999"))
       {
         System.out.println("\nYou have chosen to quit the game. Goodbye!");
         clearScreen();
-        return false; // End the game if user chooses to quit
+        return false;
       }
-      // Check if the answer is correct
       else if (answerPuzzleFour.equals(riddleAnswer))
       {
         System.out.println("Correct! The grand door opens, revealing your path to freedom.");
@@ -329,6 +291,6 @@ public class AmmtojBalGameWithCommentsSummative1
         System.out.println("Incorrect. Try again.");
       }
     }
-    return false; // return false if puzzle 4 fails, exceeding 5 attempts
+    return false;
   }
 }
