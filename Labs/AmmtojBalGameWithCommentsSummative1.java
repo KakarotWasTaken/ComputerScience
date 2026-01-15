@@ -23,7 +23,7 @@ public class AmmtojBalGameWithCommentsSummative1
     System.out.println(" Welcome to: Escape Room Adventure");
     System.out.println(" By: Ammtoj Bal");
     System.out.println("======================================= \n");
-    System.out.println("This is a text-based escape room game. Use the menu below to proceed (Appears soon). \n");
+    System.out.println("This is a text-based escape room game. Use the menu provided to proceed.");
     clearScreen();
 
     // Main menu loop
@@ -41,9 +41,7 @@ public class AmmtojBalGameWithCommentsSummative1
       if (choice == 1)
       {
         System.out.println("--- Instructions ---");
-        System.out.println("You wake up in a locked room. Solve puzzles to escape. \n");
-        System.out.print("Press Enter to return to the Main Menu...");
-        input.nextLine();
+        System.out.println("You wake up in a locked room. Solve puzzles to escape.");
         clearScreen();
       }
       else if (choice == 2)
@@ -61,18 +59,12 @@ public class AmmtojBalGameWithCommentsSummative1
     input.close();
   }
 
-
+  // Clear the screen method, simulates clearing the console by printing new lines upon user input.
   public void clearScreen()
   {
-    // Clear the screen method, using try, catch and thread, found online at https://www.geeksforgeeks.org/java/thread-sleep-method-in-java-with-examples/
-    try 
-    {
-      Thread.sleep(5000); // Wait for 2.5 seconds before clearing
-    } 
-    catch (InterruptedException e) 
-    {
-      e.printStackTrace(); // Handle the exception (in case the thread gets interrupted)
-    }
+    Scanner input = new Scanner(System.in);
+    System.out.println("Press enter to proceed:");
+    input.nextLine(); // Wait for user to press enter
     // Print 15 new lines to simulate clearing the screen
     for (int i = 0; i < 15; i++) 
     {
@@ -111,19 +103,20 @@ public class AmmtojBalGameWithCommentsSummative1
       System.out.println("\n--- Welcome to Escape Room Adventure! ---");
       System.out.println("Your goal is to solve all the puzzles and escape the room.");
       System.out.println("Good luck!");
+      clearScreen();
       
       boolean success = runPuzzles(); // invoke runPuzzles method and store the result
 
       // Handle the final result based on success or failure
       if (success) 
       {
-        System.out.println("\n--- Congratulations! ---");
+        System.out.println("\n--- Congratulations! --- \n");
         System.out.println("You have solved all the puzzles and escaped the room!");
       } 
       else 
       {
         System.out.println("\n--- Game Over ---");
-        System.out.println("You failed to solve the puzzles in time. Better luck next time!");
+        System.out.println("You failed to solve all the puzzles. Better luck next time!");
       }
     }
 
@@ -172,8 +165,8 @@ public class AmmtojBalGameWithCommentsSummative1
       String answer = input.nextLine().toLowerCase();
       if (answer.equals(correctAnswer1) || answer.equals(correctAnswer2))
       {
-        System.out.println("Correct! The iron box clicks open, revealing a key to the next door.");
-        System.out.println("You've successfully opened the next door, however a wake of fog fills the room and you lose conciousness. \n");
+        System.out.println("\nCorrect! The iron box clicks open, revealing a key to the next door.");
+        System.out.println("You've successfully opened the next door, however a wake of fog fills the room and you lose conciousness.");
         clearScreen();
         answerLoop1 = false; // Exit the loop
       }
@@ -183,32 +176,32 @@ public class AmmtojBalGameWithCommentsSummative1
       }
     }
 
-    System.out.println("\n--- Continuing to the next puzzle... ---");
+    System.out.println("\n--- Continuing to the next puzzle... --- \n");
     System.out.println("You wake up in a new room, dimly lit with a single table in the center. On the table lies a locked box with another keypad on it.");
     System.out.println("Beside the box, there's a note that reads:");
     System.out.println("Given is a product, to obtain the key find the numbers in close relation to it.");
     System.out.println("Hint: Think multiplication.");
     clearScreen();
-    System.out.println("--- Puzzle 2 ---"); 
+    System.out.println("--- Puzzle 2 --- \n"); 
 
     double num1 = 41.14;
     double num2 = 66.77;
     double result = num1 * num2;
-    System.out.printf("The product written on the note is  " + String.format("%.2f", result) + ".");
+    System.out.printf("The product written on the note is  " + String.format("%.2f", result) + ". \n");
     
     boolean answerLoop2 = true; // Loop until the correct answer is given
     while (answerLoop2)
     {
-      System.out.print("\nEnter the first integer: ");
+      System.out.print("Enter the first integer: ");
       double userNum1 = input.nextDouble();
       System.out.print("Enter the second integer: ");
       double userNum2 = input.nextDouble();
-      System.out.println();
       double userNum = userNum1 * userNum2; 
 
       if (String.format("%.2f", userNum).equals(String.format("%.2f", result))) // Match against the rounded result
       {
-        System.out.println("\nCorrect! The door unlocks, and you proceed to the next puzzle.\n");
+        System.out.println("\nCorrect! The door unlocks, and you proceed to the next puzzle.");
+        clearScreen();
         answerLoop2 = false; // Exit puzzle loop
       }
       else
