@@ -112,6 +112,16 @@ public class AmmtojBalGameWithCommentsSummative1
       System.out.println("Your goal is to solve all the puzzles and escape the room.");
       System.out.println("Good luck!");
       clearScreen();
+      System.out.println("You wake up in a cold, barely lit room. The faint scent of wet rocks filling the air.");
+      System.out.println("Your head aches, and your memories are cloudy. You can't recall how you got here.");
+      System.out.println("The sound of dripping water echoes around you, you look around, you're locked inside a labyrinth of rooms. \n");
+      System.out.println("In front of you, there's a single note scribbled hastily:");
+      System.out.println("\"Solve the puzzles, and earn your freedom. Fail, and this room will be your tomb.\"\n");
+      System.out.println("You clutch the note tightly, determined, removing all fear from your mind.");
+      System.out.println("The exepediation that took you here was a mess, but one thing is clear: ");
+      System.out.println("You must escape.");
+      clearScreen();
+
       // invoke runPuzzles method and store the result
       boolean success = runPuzzles(); 
       // Handle the final result based on success or failure
@@ -125,8 +135,11 @@ public class AmmtojBalGameWithCommentsSummative1
       else 
       {
         System.out.println("\n--- Game Over --- \n");
-        System.out.println("You failed to solve all the puzzles. ");
-        System.out.println("You remain trapped in the room forever. With your fate sealed, you can only hope for another chance.");
+        System.out.println("You hear a faint voice echoing through the room: ");
+        System.out.println("\"You failed to solve the final puzzle.\"");
+        System.out.println("Suddenly the floor beneaath you crumbles, as you fall into darkness.\n");
+        System.out.println("Youu wake up, in a similar room, but this time, there's no note.");
+        System.out.println("You remain trapped in the room forever. With your fate sealed, your adventure ends here.");
         clearScreen();
       }
     }
@@ -209,6 +222,7 @@ public class AmmtojBalGameWithCommentsSummative1
       System.out.print("Enter the second integer: ");
       double userNum2 = input.nextDouble();
       double userNum = userNum1 * userNum2; 
+      input.nextLine(); // Fix the scanner buffer issue, puzzle three has an input before one is entered.
       // Check if the user's product matches the correct product, both rounded to 2 decimal places.
       if (String.format("%.2f", userNum).equals(String.format("%.2f", result))) 
       {
@@ -240,7 +254,7 @@ public class AmmtojBalGameWithCommentsSummative1
       // Check if the answer is correct
       if(answerPuzzleThree.equals(hiddenWord))
       {
-        System.out.println("Correct! The walls rumble, and a path forward reveals itself.");
+        System.out.println("\n Correct! The walls rumble, and a path forward reveals itself.");
         clearScreen();
         answerLoop3 = false; // Exit puzzle loop
       }
