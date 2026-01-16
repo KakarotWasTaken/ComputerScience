@@ -260,11 +260,12 @@ public class AmmtojBalGameWithCommentsSummative1
     }
     // Puzzle 3 Dialogue
     System.out.println("\n--- Continuing to Puzzle 3. --- \n");
-    System.out.println("You enter a new room, inscriptions all over the walls, in blood red, \"FIND THE KEY.\"");
-    System.out.println("In the center of the room, there's a pedestal with a riddle with a red font inscribed on it.");
+    System.out.println("You enter a new room, inscriptions all over the walls, in Blood red, \"FIND THE KEY.\""); // B is caputalized to hint towards the easter egg in puzzle 4.
+    System.out.println("In the center of the room, there's a pedestal Under water with a riddle with a Blood red font inscribed on it."); // U and B are capitalized to hint towards the easter egg in puzzle 4.
     clearScreen();
     // Start Puzzle 3
     System.out.println("--- Puzzle 3 --- \n"); 
+    System.out.println("The riddle reads: "); 
     System.out.println("\"Amidst the chaos, the key lies hidden in plain sight.\"\n");
     // Declare hidden word answer
     String hiddenWord = "key";
@@ -310,6 +311,13 @@ public class AmmtojBalGameWithCommentsSummative1
     {
       System.out.print("Enter your answer (Attempt " + i + " of 5): ");
       String answerPuzzleFour = input.nextLine().toLowerCase();
+      // Easter egg check for easy escape - fun implementation.
+      if(answerPuzzleFour.equals("bub"))
+      {
+        System.out.println("Congratulations! You've discovered the bubby easter egg and escaped the room!");
+        clearScreen();
+        return true; // End the game if user chooses to quit
+      }
       // Check if the user wants to quit
       if(answerPuzzleFour.equals("999"))
       {

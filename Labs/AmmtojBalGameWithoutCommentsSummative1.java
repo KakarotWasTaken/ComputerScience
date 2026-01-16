@@ -233,8 +233,8 @@ public class AmmtojBalGameWithoutCommentsSummative1
       }
     }
     System.out.println("\n--- Continuing to Puzzle 3. --- \n");
-    System.out.println("You enter a new room, inscriptions all over the walls, in blood red, \"FIND THE KEY.\"");
-    System.out.println("In the center of the room, there's a pedestal with a riddle with a red font inscribed on it.");
+    System.out.println("You enter a new room, inscriptions all over the walls, in Blood red, \"FIND THE KEY.\"");
+    System.out.println("In the center of the room, there's a pedestal Under water with a riddle with a Blood red font inscribed on it.");
     clearScreen();
     System.out.println("--- Puzzle 3 --- \n"); 
     System.out.println("\"Amidst the chaos, the key lies hidden in plain sight.\"\n");
@@ -274,6 +274,12 @@ public class AmmtojBalGameWithoutCommentsSummative1
     {
       System.out.print("Enter your answer (Attempt " + i + " of 5): ");
       String answerPuzzleFour = input.nextLine().toLowerCase();
+      if(answerPuzzleFour.equals("bub"))
+      {
+        System.out.println("Congratulations! You've discovered the bubby easter egg and escaped the room!");
+        clearScreen();
+        return true; // End the game if user chooses to quit
+      }
       if(answerPuzzleFour.equals("999"))
       {
         System.out.println("\nYou have chosen to quit the game. Goodbye!");
