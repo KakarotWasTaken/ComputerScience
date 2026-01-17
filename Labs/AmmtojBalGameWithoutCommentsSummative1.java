@@ -77,6 +77,7 @@ public class AmmtojBalGameWithoutCommentsSummative1
     {
       System.out.println();
     }
+    input.close();
   }
   public int getMenuChoice(Scanner input)
   {
@@ -138,7 +139,6 @@ public class AmmtojBalGameWithoutCommentsSummative1
     }
    public boolean runPuzzles()
     {
-    boolean isSuccessful = true;
     Scanner input = new Scanner(System.in);
     System.out.println("--- Let's begin with Puzzle 1. ---\n");
     System.out.println("Upon waking up, you find three sets of numbers displayed on the wall, below resides a iron box with a keypad.");
@@ -278,7 +278,7 @@ public class AmmtojBalGameWithoutCommentsSummative1
       {
         System.out.println("Congratulations! You've discovered the bubby easter egg and escaped the room!");
         clearScreen();
-        return true; // End the game if user chooses to quit
+        return true;
       }
       if(answerPuzzleFour.equals("999"))
       {

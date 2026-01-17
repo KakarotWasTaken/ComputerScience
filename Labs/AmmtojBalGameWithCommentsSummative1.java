@@ -58,7 +58,7 @@ public class AmmtojBalGameWithCommentsSummative1
       }
       else if (choice == 2)
       {
-        handleGame(input);
+        handleGame(input); // Start the game, by invoking handleGame method.
       }
       else if (choice == 3)
       {
@@ -81,16 +81,20 @@ public class AmmtojBalGameWithCommentsSummative1
     {
       System.out.println();
     }
+    // Close the scanner to prevent resource leaks, not needed after clearing screen.
+    // Simply removing this can cause resource leaks but allows the program to run in certain environments.
+    input.close(); // For some reason this causes issues on other environments like Visual Studio Code, and online compilers, however it runs on Dr. Java.
   }
   // Reads integer choice from the user in the menu and returns value
   public int getMenuChoice(Scanner input)
   {
     while (true)
     {
+      // Accept user input while handling limitation
       String menuChoice = input.nextLine().toLowerCase();
       if (menuChoice.equals("1") || menuChoice.equals("one"))
       {
-        return 1;
+        return 1; // Return value for corresponding choice to be read after invoking method.
       }
       else if (menuChoice.equals("2") || menuChoice.equals("two"))
       {
@@ -109,6 +113,7 @@ public class AmmtojBalGameWithCommentsSummative1
   // Handle game method, tells user success or failure at the end of the game, invoked another method to runs puzzles
    public void handleGame(Scanner input)
     { 
+      // Play opening dialogue for game
       System.out.println("\n--- Welcome to Escape Room Adventure! ---");
       System.out.println("Your goal is to solve all the puzzles and escape the room.");
       System.out.println("Type '999' during puzzles to give up and quit the game anytime.");
@@ -144,12 +149,11 @@ public class AmmtojBalGameWithCommentsSummative1
         clearScreen();
       }
     }
-  // Run puzzles method, contains all puzzles to be ran and returns user success as a boolean value
-   public boolean runPuzzles()
+    // Run puzzles method, contains all puzzles to be ran and returns user success as a boolean value
+    public boolean runPuzzles()
     {
-    // set up successful variable
-    boolean isSuccessful = true;
-    Scanner input = new Scanner(System.in);
+    // Source of resource leak, input not closed.
+    Scanner input = new Scanner(System.in); // cant close input as we need it for the whole method, closing it would cause issues.
     System.out.println("--- Let's begin with Puzzle 1. ---\n");
     System.out.println("Upon waking up, you find three sets of numbers displayed on the wall, below resides a iron box with a keypad.");
     System.out.println("Looking closer, you see a note that reads:");
@@ -164,15 +168,15 @@ public class AmmtojBalGameWithCommentsSummative1
     System.out.println("Three sets of numbers on the wall are: \n");
     for (int set = 0; set < 3; set++)
     {
-      int[] arr = new int[m];
-      for (int i = 0; i < n; i++)
+      int[] arr = new int[m]; // initalize array to store numbers
+      for (int i = 0; i < n; i++) // loop to generate numbers until sum equals n
       {
         int randomIndex = (int)(Math.random() * m); // Generate random index
         arr[randomIndex]++; // Increase random index
       }
-      for (int number : arr)
+      for (int number : arr) // loop to print each number in the set
       {
-        System.out.print(number + " ");
+        System.out.print(number + " "); // space out each numebr
       }
       System.out.println(); // Move to the next line after printing a set
     }
