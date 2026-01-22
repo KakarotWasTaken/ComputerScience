@@ -25,31 +25,27 @@ public class examPractice3
     // Start user input
     Scanner input = new Scanner(System.in);
     
-    System.out.println("Please enter an integer value: ");
-    int userInt = input.nextInt();
-
+    System.out.print("please enter an integer value: ");
+    int userNum = input.nextInt();
 
     boolean isSquare = false;
     int squareRoot = 0;
-    for (int i = 1; i <= userInt; i++)
+    for (int i = 1; i <= userNum; i++)
     {
-    if(i*i == userInt)
-        {
-           isSquare = true;
-           squareRoot = i; 
-        }
+      if (i*i == userNum)
+      {
+        isSquare = true;
+        squareRoot = i;
+      }
     }
-
     if (isSquare)
     {
-        System.out.println("Your number is a square number with a sqaure root of " + squareRoot + ".");
+      System.out.println(userNum + " is a square number because " + squareRoot + " x " + squareRoot + " = " + userNum + ".");
     }
     else
     {
-        System.out.println("your nmumber is not a square number");
+      System.out.println(userNum + " is not a square number.");
     }
-
-    input.close();
   }
   
 }

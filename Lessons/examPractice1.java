@@ -22,14 +22,14 @@ public class examPractice1
   {
     // Start user input
     Scanner input = new Scanner(System.in);
-    
-    System.out.print("Please enter the length of the movie in minutes: ");
-    int movieLength = input.nextInt();
+  
+    System.out.print("please enter the length of the movie in minutes: ");
+    int length = input.nextInt();
 
-    double price = movieLength*0.25;
+    double price = length * 0.25;
 
-    System.out.println("The cost of the movie is " + String.format("%.2f", price) + " dollars.");
-    
+    System.out.println("the price of the movie is " + String.format("%.2f", price) + " dollars.");
+
     input.close();
   }
 }

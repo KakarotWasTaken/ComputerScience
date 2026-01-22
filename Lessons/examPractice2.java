@@ -25,19 +25,19 @@ public class examPractice2
   {
     // Start user input
     Scanner input = new Scanner(System.in);
-    System.out.print("please enter the length of the rectangular prism: ");
+    System.out.println("please enter the length of the rectangular prism: ");
     double length = input.nextDouble();
-    System.out.print("please enter the width of the rectangular prism: ");
+    System.out.println("please enter the width of the rectangular prism: ");
     double width = input.nextDouble();
-    System.out.print("please enter the height of the rectangular prism: ");
+    System.out.println("please enter the height of the rectangular prism: ");
     double height = input.nextDouble();
-    
-    double area = 2*(width*length+height*length+height*width);
+
+    double surfaceArea = 2*(width*length+height*length+height*width);
     double volume = width*height*length;
 
-    System.out.println("the surface area of the rectangular prism is: " + String.format("%.2f", area) + " square units.");
-    System.out.println("the volume of the rectangular prism is: " + String.format("%.2f", volume) + " cubic units.");
-    
+    System.out.println("the surface area of the rectangular prism is " + String.format("%.2f", surfaceArea) + ".");
+    System.out.println("the volume of the rectangular prism is " + String.format("%.2f", volume) + ".");
+
     input.close();
   }
 }
