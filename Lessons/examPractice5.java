@@ -24,26 +24,27 @@ public class examPractice5
     // Start user input
     Scanner input = new Scanner(System.in);
 
+    int randomNum = 67;
 
-    int randomNum = 3;
+    System.out.println("please enter a number between 1-100: ");
+    int userGuess = input.nextInt();
 
-    System.out.println("please pick a number between 1 and 100: ");
-    int userNum = input.nextInt();
-
-    while (userNum != randomNum)
+    while(userGuess != randomNum)
     {
-        if (userNum > randomNum)
-        {
-            System.out.println("your number is higher than the random number, please pick again: ");
-            userNum = input.nextInt();
-        }
-        else
-        {
-            System.out.println("your number is lower than the random number, please pick again:");
-            userNum = input.nextInt();
-        }
+      if (userGuess > randomNum)
+      {
+        System.out.println("your guess is too high, please try agian");
+        System.out.println("please enter a number between 1-100: ");
+        userGuess = input.nextInt();
+      }
+      else
+      {
+        System.out.println("your guess is too low, please try agian");
+        System.out.println("please enter a number between 1-100: ");
+        userGuess = input.nextInt();
+      }
     }
-    System.out.println("congratulations! you have guessed the number!");
+    System.out.println("congratulations! you have guessed the correct number: " + randomNum + ".");
     input.close();
   }
 }

@@ -22,15 +22,13 @@ public class examPractice6
   {
     // Start user input
     Scanner input = new Scanner(System.in);
-
     int sum = 0;
     int targetNum = 5;
-    for(int i = 1; i <= targetNum; i++)
+    for (int i = 1; i <= targetNum; i++)
     {
-        sum = sum + i;
+      sum = sum + i;
     }
-    System.out.println("the sum of all numbers from 1-targetnum is " + sum + ".");
-    
+    System.out.println("The sum of numbers from 1 to " + targetNum + " is: " + sum + ".");
     input.close();
   }
 }

@@ -24,25 +24,26 @@ public class examPractice4
     // Start user input
     Scanner input = new Scanner(System.in);
     
-    System.out.println("Please enter your mark (0-100): ");
-    double mark = input.nextDouble();
+    System.out.println("please enter your grade: ");
+    double grade = input.nextDouble();
 
-    if (mark > 100 || mark < 0)
+    if (grade < 0 || grade > 100)
     {
-        System.out.println("please enter a vlaid markl");
+        System.out.println("invalid grade, please enter a valid number");
     }
-    else if (mark > 90)
+    else if(grade > 90)
     {
-        System.out.println("We reccomend you to take enriched level courses.");
+      System.out.println("you should take the enriched level course.");
     }
-    else if (mark >= 80 || mark == 90)
+    else if(grade > 80 || grade == 90)
     {
-        System.out.println("We reccomend you to take academic level courses.");
+      System.out.println("you should take the academic level course.");
     }
-    else 
+    else
     {
-        System.out.println("We reccomend you to take applied level courses.");
+      System.out.println("you should take the applied level course.");
     }
+   
     input.close();
   }
 }

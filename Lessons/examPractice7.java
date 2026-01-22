@@ -23,11 +23,10 @@ public class examPractice7
     Scanner input = new Scanner(System.in);
     
     for (int i = 1; i <= 5; i++)
-    {
-        System.out.println(i);
-    }
+      {
+       System.out.println(i); 
+      }
 
-    
     input.close();
   }
 }
